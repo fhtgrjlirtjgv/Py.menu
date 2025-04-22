@@ -1,0 +1,15 @@
+nav{
+    background: rgb(64, 64, 64);
+}
+
+.articles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card{
+    background: rgb(90, 0, 0);
+}
+
