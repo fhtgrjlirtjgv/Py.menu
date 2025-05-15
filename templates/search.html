@@ -1,0 +1,24 @@
+      {% extends 'base.html' %}
+
+      {% block content %}
+       <h1 class="my-5 text-center">Logika rest</h1>
+       <h2 class="m-3 text-center">Меню</h2>
+
+    <div class="categories">
+
+      {% for dish in dishes %}
+        <div class="card" style="width: 18rem;">
+          <img src="{{ url_for('static', filename='img/'+dish[5])}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{dish[1]}}</h5>
+            <h6>{{dish[2]}}₴</h6>
+            <p class="card-text">{{dish[3]}}</p>
+            <small>{{dish[4]}}</small>
+            <a href="#" class="btn btn-light">Читати</a>
+          </div>
+        </div>
+      {% endfor %}
+
+
+    </div>
+    {% endblock content %}

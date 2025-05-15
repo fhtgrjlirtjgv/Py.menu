@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request
 from sql_scripts import *
 
 app = Flask(__name__)  # Створюємо веб–додаток Flask
@@ -13,8 +13,20 @@ def index():
 @app.route("/categories/<int:category_id>")  # Вказуємо url-адресу для виклику функції
 def category_pg(category_id):
     dishes = get_by_categories(category_id)
-    categories = get_all_categories()
+    categories = get_all_categories()    
     return render_template("index.html", dishes=dishes,categories=categories)  # html-сторінка, що повертається у браузер
+
+
+@app.route("/search")  # Вказуємо url-адресу для виклику функції
+def search():
+    query = request.args.get('query', "")
+    articles = search_categories(query)
+    return render_template("search.html", articles=articles)  # html-сторінка, що повертається у браузер
+ 
+@app.route("/contacts")  # Вказуємо url-адресу для виклику функції
+def contacts():
+    return render_template("contact.html")
+
 
 
 

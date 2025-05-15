@@ -1,5 +1,5 @@
 nav{
-    background: rgb(64, 64, 64);
+    background: rgb(0, 0, 0);
 }
 
 .articles{
@@ -10,6 +10,6 @@ nav{
 }
 
 .card{
-    background: rgb(90, 0, 0);
+    background: rgb(155, 19, 19);
 }
 
