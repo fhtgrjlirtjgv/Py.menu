@@ -21,7 +21,7 @@ def category_pg(category_id):
 def search():
     query = request.args.get('query', "")
     articles = search_categories(query)
-    return render_template("search.html", articles=articles)  # html-сторінка, що повертається у браузер
+    return render_template("search.html", dishes=articles)  # html-сторінка, що повертається у браузер
  
 @app.route("/contacts")  # Вказуємо url-адресу для виклику функції
 def contacts():

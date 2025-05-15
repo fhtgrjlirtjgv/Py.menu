@@ -42,11 +42,11 @@ def get_by_categories(category_id):
     return dishes
 
 def search_categories(search_query):
-    conn = sqlite3.connect('blog.db')
+    conn = sqlite3.connect('menu.db')
     cursor = conn.cursor()
 
-    cursor.execute('SELECT * FROM articles WHERE title LIKE ?', ['%'+search_query+'%'])
+    cursor.execute('SELECT * FROM dishes WHERE title LIKE ?', ['%'+search_query+'%'])
     dishes = cursor.fetchall()
     conn.close()
 
-    return get_all_categories
+    return dishes
